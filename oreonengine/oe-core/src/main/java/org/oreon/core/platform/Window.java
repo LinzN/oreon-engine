@@ -16,6 +16,8 @@ public abstract class Window {
 	
 	public abstract void create();
 	
+	public abstract void show();
+	
 	public abstract void draw();
 	
 	public abstract void shutdown();
@@ -23,6 +25,13 @@ public abstract class Window {
 	public abstract boolean isCloseRequested();
 
 	public abstract void resize(int x, int y);
+	
+	public Window(String title, int width, int height) {
+		
+		this.width = width;
+		this.height = height;
+		this.title = title;
+	}
 	
 	public void setIcon(String path){
 		
@@ -33,7 +42,7 @@ public abstract class Window {
 		image.set(32, 32, bufferedImage);
 		
 		GLFWImage.Buffer images = GLFWImage.malloc(1);
-        images.put(0, image);
+		images.put(0, image);
 		
 		glfwSetWindowIcon(getId(), images);
 	}

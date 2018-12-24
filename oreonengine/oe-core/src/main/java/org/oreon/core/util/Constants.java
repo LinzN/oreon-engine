@@ -1,13 +1,15 @@
 package org.oreon.core.util;
 
-import org.oreon.core.math.Quaternion;
+import org.oreon.core.math.Vec3f;
+import org.oreon.core.math.Vec4f;
 
 public class Constants {
 	
-	public static final long NANOSECOND = 1000000000;
+	public static final long NANOSECOND = 1000000000l;
 	public static final float ZFAR = 10000.0f;
 	public static final float ZNEAR = 0.1f;
-	public static Quaternion PLANE0 = new Quaternion(0,0,0,0);
+	public static Vec4f ZEROPLANE = new Vec4f(0,0,0,0);
+	public static Vec3f DEEPOCEAN_COLOR = new Vec3f(0.1f,0.125f,0.24f);
 	public static int CLIPOFFSET;
 	public static final int PSSM_SPLITS = 6;
 	public static final float[] PSSM_SPLIT_SHEME= { -0.005f,0.005f,
@@ -17,16 +19,7 @@ public class Constants {
 													0.02f,0.06f,
 													0.05f,0.16f };
 	
-	public static final int TERRAIN_FRACTALS_RESOLUTION = 512;
 	public static final int PSSM_SHADOWMAP_RESOLUTION = 4096;
-	public static final int MULTISAMPLES = 8;
-	
-	// Component keys
-	public static final String RENDERER_COMPONENT = "Renderer";
-	public static final String SHADOW_RENDERER_COMPONENT = "ShadowRenderer";
-	
-	
-	// Motion Blur settings
 	
 	// Global Uniform Block Bindings
 	public static final int CameraUniformBlockBinding = 51;
